@@ -17,9 +17,9 @@ public class ServicoDeAluguel {
     private double precoPorHora;
     private double precoPorDia;
 
-    private TaxaDoBrasil taxaDoBrasil;
+    private ServicoDeTaxa taxaDoBrasil;
 
-    public ServicoDeAluguel(double precoPorHora, double precoPorDia, TaxaDoBrasil taxaDoBrasil) {
+    public ServicoDeAluguel(double precoPorHora, double precoPorDia, ServicoDeTaxa taxaDoBrasil) {
         this.precoPorHora = precoPorHora;
         this.precoPorDia = precoPorDia;
         this.taxaDoBrasil = taxaDoBrasil;
@@ -30,7 +30,6 @@ public class ServicoDeAluguel {
         long t2 = aluguel.getFim().getTime();
         double horas = (double) (t2 - t1) / 1000.0 / 60.0 / 60.0;
         
-        System.out.println(Math.ceil(horas));
         double pagamento;
         if (horas <= 12.0) {
             pagamento = Math.ceil(horas) * this.precoPorHora;
